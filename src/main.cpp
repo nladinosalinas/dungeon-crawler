@@ -1,8 +1,8 @@
-#include <iostream>
+#include "render.h"
 
 int main()
 {
-    std::cout << "Dungeon Crawler iniciado\n";
+    renderizar();
 
     return 0;
 }
