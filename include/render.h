@@ -1,6 +1,8 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-void renderizar();
+#include "../include/player.h"
+
+void renderizar(Player* jugador);
 
 #endif
