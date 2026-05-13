@@ -1,12 +1,15 @@
 #include "../include/render.h"
 #include "../include/player.h"
 #include <iostream>
+#include "../include/map.h"
 
 int main()
 {
     Player jugador;
 
     iniciarJugador(&jugador);
+
+    iniciarMapa();
 
     char tecla;
 
@@ -46,6 +49,15 @@ int main()
         {
             jugador.x = nuevaX;
             jugador.y = nuevaY;
+        }
+
+        if (jugador.x >= COLUMNAS -1)
+        {
+            if (habitacionActual < 1)
+            {
+                cargarHabitacion(habitacionActual + 1);
+                jugador.x = 1;
+            }
         }
 
     }
