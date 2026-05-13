@@ -2,14 +2,17 @@
 #include "../include/player.h"
 #include <iostream>
 #include "../include/map.h"
+#include "../include/enemy.h"
 
 int main()
 {
     Player jugador;
+    Enemy enemigo;
 
     iniciarMapa();
     
     iniciarJugador(&jugador);
+    iniciarEnemigo(&enemigo, 5, 2);
 
     char tecla;
 
@@ -17,7 +20,7 @@ int main()
     {
         system("cls");
     
-        renderizar(&jugador);
+        renderizar(&jugador, &enemigo);
 
         std::cout <<"\nWASD para moverte: ";
         std::cin >> tecla;
@@ -50,6 +53,8 @@ int main()
             jugador.x = nuevaX;
             jugador.y = nuevaY;
         }
+
+        moverEnemigo(&enemigo, jugador.x, jugador.y);
 
         if (jugador.x >= COLUMNAS -1)
         {

@@ -2,7 +2,8 @@
 #define RENDER_H
 
 #include "../include/player.h"
+#include "../include/enemy.h"
 
-void renderizar(Player* jugador);
+void renderizar(Player* jugador, Enemy* enemigo);
 
 #endif
