@@ -7,9 +7,9 @@ int main()
 {
     Player jugador;
 
-    iniciarJugador(&jugador);
-
     iniciarMapa();
+    
+    iniciarJugador(&jugador);
 
     char tecla;
 

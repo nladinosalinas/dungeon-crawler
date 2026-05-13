@@ -28,7 +28,7 @@ int habitacionActual = 0;
 
 void cargarHabitacion(int numero)
 {
-    for (int i = 0; i < COLUMNAS; i++)
+    for (int i = 0; i < FILAS; i++)
     {
         for (int j = 0; j < COLUMNAS; j++)
         {
