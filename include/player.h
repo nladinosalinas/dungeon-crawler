@@ -9,4 +9,6 @@ struct Player
 
 void iniciarJugador(Player* jugador);
 
+bool puedeMoverse(int nuevaX, int nuevaY);
+
 #endif

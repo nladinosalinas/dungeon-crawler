@@ -19,25 +19,35 @@ int main()
         std::cout <<"\nWASD para moverte: ";
         std::cin >> tecla;
 
+        int nuevaX = jugador.x;
+        int nuevaY = jugador.y;
+
         if (tecla == 'w')
         {
-            jugador.y--;
+            nuevaY--;
         }
 
         if (tecla == 's')
         {
-            jugador.y++;
+            nuevaY++;
         }
 
         if (tecla == 'a')
         {
-            jugador.x--;
+            nuevaX--;
         }
 
         if (tecla == 'd')
         {
-            jugador.x++;
+            nuevaX++;
         }
+
+        if (puedeMoverse(nuevaX, nuevaY))
+        {
+            jugador.x = nuevaX;
+            jugador.y = nuevaY;
+        }
+
     }
 
     return 0;
