@@ -5,6 +5,7 @@ struct Player
 {
     int x;
     int y;
+    int vida;
 };
 
 void iniciarJugador(Player* jugador);

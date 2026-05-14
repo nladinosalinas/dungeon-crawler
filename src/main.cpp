@@ -56,6 +56,20 @@ int main()
 
         moverEnemigo(&enemigo, jugador.x, jugador.y);
 
+        if(enemigo.x == jugador.x && enemigo.y == jugador.y)
+        {
+            jugador.vida--;
+            jugador.x = 9;
+            jugador.y = 2;
+        }
+
+        if (jugador.vida <= 0)
+        {
+            system("cls");
+            std::cout << "GAME OVER\n";
+            break;
+        }
+
         if (jugador.x >= COLUMNAS -1)
         {
             if (habitacionActual < 1)

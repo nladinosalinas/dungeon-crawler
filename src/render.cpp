@@ -28,4 +28,6 @@ void renderizar(Player* jugador, Enemy* enemigo)
 
         std::cout << "\n";
     }
+
+    std::cout<< "\nVida: " << jugador->vida <<"\n";
 }
