@@ -54,6 +54,12 @@ int main()
             jugador.y = nuevaY;
         }
 
+        if (mapa[jugador.y][jugador.x] == 'K')
+        {
+            jugador.tieneLlave = true;
+            mapa [jugador.y][jugador.x] = '.';
+        }
+
         moverEnemigo(&enemigo, jugador.x, jugador.y);
 
         if(enemigo.x == jugador.x && enemigo.y == jugador.y)
@@ -67,6 +73,13 @@ int main()
         {
             system("cls");
             std::cout << "GAME OVER\n";
+            break;
+        }
+
+        if (mapa[jugador.y][jugador.x] == 'X' && jugador.tieneLlave)
+        {
+            system("cls");
+            std::cout << "GANASTE\n";
             break;
         }
 

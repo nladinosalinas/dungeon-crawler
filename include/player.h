@@ -6,6 +6,7 @@ struct Player
     int x;
     int y;
     int vida;
+    bool tieneLlave;
 };
 
 void iniciarJugador(Player* jugador);

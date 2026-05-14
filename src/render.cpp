@@ -30,4 +30,12 @@ void renderizar(Player* jugador, Enemy* enemigo)
     }
 
     std::cout<< "\nVida: " << jugador->vida <<"\n";
+
+    if (jugador->tieneLlave)
+    {
+        std::cout << "Llave: SI\n";
+    }
+    else {
+        std:: cout << "Llave: NO\n";
+    }
 }
