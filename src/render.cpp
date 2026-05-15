@@ -4,7 +4,7 @@
 #include "../include/map.h"
 #include "../include/enemy.h"
 
-void renderizar(Player* jugador, Enemy* enemigo)
+void renderizar(Player* jugador, Enemy* enemigo, Enemy* enemigo2)
 {
     for (int i = 0; i < FILAS; i++)
     {
@@ -19,6 +19,9 @@ void renderizar(Player* jugador, Enemy* enemigo)
             {
                 std::cout << "E";
             }
+
+            else if (i == enemigo2->y && j == enemigo2->x)
+            std:: cout << "T";
             
             else
             {

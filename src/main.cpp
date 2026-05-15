@@ -22,7 +22,7 @@ int main()
     {
         system("cls");
     
-        renderizar(&jugador, &enemigo);
+        renderizar(&jugador, &enemigo, &enemigo2);
 
         std::cout <<"\nWASD para moverte: ";
         std::cin >> tecla;
@@ -63,6 +63,7 @@ int main()
         }
 
         moverEnemigo(&enemigo, jugador.x, jugador.y);
+        moverEnemigo(&enemigo2, jugador.x, jugador.y);
 
         if(enemigo.x == jugador.x && enemigo.y == jugador.y)
         {
@@ -70,6 +71,12 @@ int main()
             jugador.x = 9;
             jugador.y = 2;
         }
+
+        if(enemigo2.x == jugador.x && enemigo2.y == jugador.y)
+        {
+            jugador.vida--;
+            jugador.x = 9;
+            jugador.y = 2;
 
         if (jugador.vida <= 0)
         {
