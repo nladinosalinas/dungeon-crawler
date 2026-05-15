@@ -34,9 +34,15 @@ void moverEnemigo(Enemy* enemigo, int jugadorX, int jugadorY)
         nuevaY--;
     }
 
-    if (mapa[nuevaY][nuevaX] != '#')
+    if (nuevaX >= 0 && nuevaX < COLUMNAS)
     {
-        enemigo->x = nuevaX;
-        enemigo->y = nuevaY;
+        if (nuevaY >= 0 && nuevaY < FILAS)
+        {
+            if (mapa[nuevaY][nuevaX] != '#')
+            { 
+                enemigo->x = nuevaX;
+                enemigo->y = nuevaY;
+            }
+        }
     }
 }

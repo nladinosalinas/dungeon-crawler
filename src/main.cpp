@@ -85,7 +85,7 @@ int main()
 
         if (jugador.x >= COLUMNAS -1)
         {
-            if (habitacionActual < 1)
+            if (habitacionActual < 5)
             {
                 cargarHabitacion(habitacionActual + 1);
                 jugador.x = 1;
