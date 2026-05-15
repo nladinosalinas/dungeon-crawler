@@ -8,11 +8,13 @@ int main()
 {
     Player jugador;
     Enemy enemigo;
+    Enemy enemigo2;
 
     iniciarMapa();
     
     iniciarJugador(&jugador);
-    iniciarEnemigo(&enemigo, 5, 2);
+    iniciarEnemigo(&enemigo, 5, 2, 0);
+    iniciarEnemigo(&enemigo2, 14, 1, 1);
 
     char tecla;
 
