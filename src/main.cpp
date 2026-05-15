@@ -78,6 +78,8 @@ int main()
             jugador.x = 9;
             jugador.y = 2;
 
+        }
+
         if (jugador.vida <= 0)
         {
             system("cls");
@@ -98,10 +100,22 @@ int main()
             {
                 cargarHabitacion(habitacionActual + 1);
                 jugador.x = 1;
+                iniciarEnemigo(&enemigo, 5, 2, 0);
+                iniciarEnemigo(&enemigo2, 14, 1, 1);
             }
         }
 
-    }
+        if (jugador.x <= 0)
+        {
+            if (habitacionActual > 0)
+            {
+                cargarHabitacion(habitacionActual - 1);
+                jugador.x = COLUMNAS - 2;
+                iniciarEnemigo(&enemigo, 5, 2, 0);
+                iniciarEnemigo(&enemigo2, 14, 1, 1);
+            }
 
+        }
+    }
     return 0;
 }
