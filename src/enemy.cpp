@@ -55,7 +55,11 @@ if (enemigo->tipo == 1)
     {
         int nuevaX = enemigo->x + enemigo->direccion;
 
-        if (mapa[enemigo->y][nuevaX] == '#')
+        if (nuevaX <= 0 || nuevaX >= COLUMNAS - 1)
+        {
+            enemigo->direccion *= -1;
+        }
+        else if (mapa[enemigo->y][nuevaX] == '#')
         {
             enemigo->direccion *= -1;
         }
