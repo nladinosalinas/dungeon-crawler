@@ -42,4 +42,6 @@ void renderizar(Player* jugador, Enemy* enemigo, Enemy* enemigo2)
     else {
         std:: cout << "Llave: NO\n";
     }
+
+    std::cout << "K: llave  P: pocion  X: salida\n";
 }

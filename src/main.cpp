@@ -69,6 +69,16 @@ int main()
             mapa [jugador.y][jugador.x] = '.';
         }
 
+        if (mapa[jugador.y][jugador.x] == 'P')
+        {
+            if (jugador.vida < 3)
+            {
+                jugador.vida++;
+            }
+
+            mapa[jugador.y][jugador.x] = '.';
+        }
+
         moverEnemigo(&enemigo, jugador.x, jugador.y);
         moverEnemigo(&enemigo2, jugador.x, jugador.y);
 
