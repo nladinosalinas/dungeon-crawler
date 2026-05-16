@@ -24,28 +24,35 @@ int main()
     
         renderizar(&jugador, &enemigo, &enemigo2);
 
-        std::cout <<"\nWASD para moverte: ";
+        std::cout <<"\nWASD para moverte, Q para salir: ";
         std::cin >> tecla;
+
+        if (tecla == 'q' || tecla == 'Q')
+        {
+            system("cls");
+            std::cout << "Saliste del juego\n";
+            break;
+        }
 
         int nuevaX = jugador.x;
         int nuevaY = jugador.y;
 
-        if (tecla == 'w')
+        if (tecla == 'w' || tecla == 'W')
         {
             nuevaY--;
         }
 
-        if (tecla == 's')
+        if (tecla == 's' || tecla == 'S')
         {
             nuevaY++;
         }
 
-        if (tecla == 'a')
+        if (tecla == 'a' || tecla == 'A')
         {
             nuevaX--;
         }
 
-        if (tecla == 'd')
+        if (tecla == 'd' || tecla == 'D')
         {
             nuevaX++;
         }

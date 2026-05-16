@@ -32,7 +32,8 @@ void renderizar(Player* jugador, Enemy* enemigo, Enemy* enemigo2)
         std::cout << "\n";
     }
 
-    std::cout<< "\nVida: " << jugador->vida <<"\n";
+    std::cout<< "\nHabitacion: " << habitacionActual + 1 << "\n";
+    std::cout<< "Vida: " << jugador->vida <<"\n";
 
     if (jugador->tieneLlave)
     {
