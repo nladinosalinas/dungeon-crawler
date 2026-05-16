@@ -43,5 +43,5 @@ void renderizar(Player* jugador, Enemy* enemigo, Enemy* enemigo2)
         std:: cout << "Inventario: vacio\n";
     }
 
-    std::cout << "K: llave  P: pocion  X: salida  E: soltar\n";
+std::cout << "K: Llave\nP: Pocion\n^: Trampa\nX: Salida\nE: Soltar\nQ: Salir del juego";
 }

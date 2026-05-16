@@ -24,7 +24,7 @@ int main()
     
         renderizar(&jugador, &enemigo, &enemigo2);
 
-        std::cout <<"\nWASD para moverte, E para soltar, Q para salir: ";
+        std::cout <<"\n(W) (A) (S) (D) para moverte: ";
         std::cin >> tecla;
 
         bool soltoObjeto = false;
@@ -94,6 +94,12 @@ int main()
                 jugador.vida++;
             }
 
+            mapa[jugador.y][jugador.x] = '.';
+        }
+
+        if (mapa[jugador.y][jugador.x] == '^')
+        {
+            jugador.vida--;
             mapa[jugador.y][jugador.x] = '.';
         }
 
