@@ -38,7 +38,7 @@ void moverEnemigo(Enemy* enemigo, int jugadorX, int jugadorY)
         nuevaY--;
     }
 
-    if (nuevaX >= 0 && nuevaX < COLUMNAS)
+    if (nuevaX >= 0 && nuevaX < COLUMNAS - 1)
     {
         if (nuevaY >= 0 && nuevaY < FILAS)
         {

@@ -11,7 +11,7 @@ void iniciarJugador(Player* jugador)
 
 bool puedeMoverse(int nuevaX, int nuevaY)
 {
-    if (nuevaX < 0 || nuevaX >= COLUMNAS)
+    if (nuevaX < 0 || nuevaX >= COLUMNAS - 1)
     {
         return false;
     }

@@ -13,7 +13,7 @@ int main()
     iniciarMapa();
     
     iniciarJugador(&jugador);
-    iniciarEnemigo(&enemigo, 5, 2, 0);
+    iniciarEnemigo(&enemigo, 2, 2, 0);
     iniciarEnemigo(&enemigo2, 14, 1, 1);
 
     char tecla;
@@ -103,22 +103,44 @@ int main()
             mapa[jugador.y][jugador.x] = '.';
         }
 
-        moverEnemigo(&enemigo, jugador.x, jugador.y);
-        moverEnemigo(&enemigo2, jugador.x, jugador.y);
+        bool recibioGolpe = false;
 
         if(enemigo.x == jugador.x && enemigo.y == jugador.y)
         {
             jugador.vida--;
-            jugador.x = 9;
-            jugador.y = 2;
+            jugador.x = 1;
+            jugador.y = 1;
+            recibioGolpe = true;
         }
 
-        if(enemigo2.x == jugador.x && enemigo2.y == jugador.y)
+        if(enemigo2.x == jugador.x && enemigo2.y == jugador.y && recibioGolpe == false)
         {
             jugador.vida--;
-            jugador.x = 9;
-            jugador.y = 2;
+            jugador.x = 1;
+            jugador.y = 1;
+            recibioGolpe = true;
 
+        }
+
+        if (recibioGolpe == false)
+        {
+            moverEnemigo(&enemigo, jugador.x, jugador.y);
+            moverEnemigo(&enemigo2, jugador.x, jugador.y);
+
+            if(enemigo.x == jugador.x && enemigo.y == jugador.y)
+            {
+                jugador.vida--;
+                jugador.x = 1;
+                jugador.y = 1;
+                recibioGolpe = true;
+            }
+
+            if(enemigo2.x == jugador.x && enemigo2.y == jugador.y && recibioGolpe == false)
+            {
+                jugador.vida--;
+                jugador.x = 1;
+                jugador.y = 1;
+            }
         }
 
         if (jugador.vida <= 0)
@@ -135,13 +157,13 @@ int main()
             break;
         }
 
-        if (jugador.x >= COLUMNAS -1)
+        if (jugador.x >= COLUMNAS - 2)
         {
             if (habitacionActual < 5)
             {
                 cargarHabitacion(habitacionActual + 1);
                 jugador.x = 1;
-                iniciarEnemigo(&enemigo, 5, 2, 0);
+                iniciarEnemigo(&enemigo, 2, 2, 0);
                 iniciarEnemigo(&enemigo2, 14, 1, 1);
             }
         }
@@ -151,8 +173,8 @@ int main()
             if (habitacionActual > 0)
             {
                 cargarHabitacion(habitacionActual - 1);
-                jugador.x = COLUMNAS - 2;
-                iniciarEnemigo(&enemigo, 5, 2, 0);
+                jugador.x = COLUMNAS - 3;
+                iniciarEnemigo(&enemigo, 2, 2, 0);
                 iniciarEnemigo(&enemigo2, 14, 1, 1);
             }
 

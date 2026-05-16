@@ -1,8 +1,8 @@
 #ifndef MAP_H
 #define MAP_H
 
-const int FILAS = 5;
-const int COLUMNAS = 20;
+const int FILAS = 7;
+const int COLUMNAS = 25;
 
 extern char mapa[FILAS][COLUMNAS];
 extern int habitacionActual;
