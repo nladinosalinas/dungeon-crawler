@@ -55,6 +55,19 @@ if (enemigo->tipo == 1)
     {
         int nuevaX = enemigo->x + enemigo->direccion;
 
+        if (jugadorY == enemigo->y)
+        {
+            if (jugadorX > enemigo->x)
+            {
+                nuevaX = enemigo->x + 1;
+            }
+
+            if (jugadorX < enemigo->x)
+            {
+                nuevaX = enemigo->x - 1;
+            }
+        }
+
         if (nuevaX <= 0 || nuevaX >= COLUMNAS - 1)
         {
             enemigo->direccion *= -1;

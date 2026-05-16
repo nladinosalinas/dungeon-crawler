@@ -24,14 +24,29 @@ int main()
     
         renderizar(&jugador, &enemigo, &enemigo2);
 
-        std::cout <<"\nWASD para moverte, Q para salir: ";
+        std::cout <<"\nWASD para moverte, E para soltar, Q para salir: ";
         std::cin >> tecla;
+
+        bool soltoObjeto = false;
 
         if (tecla == 'q' || tecla == 'Q')
         {
             system("cls");
             std::cout << "Saliste del juego\n";
             break;
+        }
+
+        if (tecla == 'e' || tecla == 'E')
+        {
+            if (jugador.inventario != ' ')
+            {
+                if (mapa[jugador.y][jugador.x] == '.')
+                {
+                    mapa[jugador.y][jugador.x] = jugador.inventario;
+                    jugador.inventario = ' ';
+                    soltoObjeto = true;
+                }
+            }
         }
 
         int nuevaX = jugador.x;
@@ -63,10 +78,13 @@ int main()
             jugador.y = nuevaY;
         }
 
-        if (mapa[jugador.y][jugador.x] == 'K')
+        if (mapa[jugador.y][jugador.x] == 'K' && soltoObjeto == false)
         {
-            jugador.tieneLlave = true;
-            mapa [jugador.y][jugador.x] = '.';
+            if (jugador.inventario == ' ')
+            {
+                jugador.inventario = 'K';
+                mapa [jugador.y][jugador.x] = '.';
+            }
         }
 
         if (mapa[jugador.y][jugador.x] == 'P')
@@ -104,7 +122,7 @@ int main()
             break;
         }
 
-        if (mapa[jugador.y][jugador.x] == 'X' && jugador.tieneLlave)
+        if (mapa[jugador.y][jugador.x] == 'X' && jugador.inventario == 'K')
         {
             system("cls");
             std::cout << "GANASTE\n";

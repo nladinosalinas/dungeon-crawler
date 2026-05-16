@@ -35,13 +35,13 @@ void renderizar(Player* jugador, Enemy* enemigo, Enemy* enemigo2)
     std::cout<< "\nHabitacion: " << habitacionActual + 1 << "\n";
     std::cout<< "Vida: " << jugador->vida <<"\n";
 
-    if (jugador->tieneLlave)
+    if (jugador->inventario == 'K')
     {
-        std::cout << "Llave: SI\n";
+        std::cout << "Inventario: llave\n";
     }
     else {
-        std:: cout << "Llave: NO\n";
+        std:: cout << "Inventario: vacio\n";
     }
 
-    std::cout << "K: llave  P: pocion  X: salida\n";
+    std::cout << "K: llave  P: pocion  X: salida  E: soltar\n";
 }
